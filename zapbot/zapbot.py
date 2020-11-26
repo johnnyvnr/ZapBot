@@ -1,8 +1,8 @@
 from selenium import webdriver
 import time
 
-# Necesário estar instalado o Selenium e o ChromeWebDriver no PC
-# Substitua o Grupo de Exemplo1 e Grupo de Exemplo2
+# Necesário estar instalado o Selenium e no PC e o ChromeWebDriver estar na pasta do ZapBot.
+# Substitua o Grupo de Exemplo1 e Grupo de Exemplo2 pelos grupos desejados.
 
 class zapBot:
     def __init__(self):
@@ -19,10 +19,10 @@ class zapBot:
         self.driver.get('https://web.whattsapp.com')
         time.sleep(30)
         for group in self.groups:
-            group = self.driver.find_element_by_xpath(f"//span[@title={group}]")
+            group = self.driver.find_element_by_xpath(f"//span[@title='{group}']")
             time.sleep(3)
             group.click()
-            chatBox = self.driver.find_elements_by_class_name('xxx')
+            chatBox = self.driver.find_element_by_class_name('xxx')
             time.sleep(3)
             chatBox.click()
             chatBox.send_keys(self.message)
